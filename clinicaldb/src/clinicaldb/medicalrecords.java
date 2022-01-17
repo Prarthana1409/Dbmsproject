@@ -7,6 +7,7 @@
  *
  * @author Prarthana
  */
+package clinicaldb;
 public class medicalrecords extends javax.swing.JFrame {
 
     /**

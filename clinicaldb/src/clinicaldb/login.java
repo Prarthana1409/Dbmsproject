@@ -62,11 +62,11 @@ public class login extends javax.swing.JFrame {
                 LoginButActionPerformed(evt);
             }
         });
-        getContentPane().add(LoginBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, -1, -1));
+        getContentPane().add(LoginBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, -1));
 
         CloseBut.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         CloseBut.setIcon(new javax.swing.ImageIcon("C:\\Users\\raksh\\Desktop\\icons\\close.png")); // NOI18N
-        CloseBut.setText("Close");
+        CloseBut.setText("Exit");
         CloseBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CloseButActionPerformed(evt);
@@ -101,7 +101,7 @@ public class login extends javax.swing.JFrame {
             if(rs.next())
             {
                 JOptionPane.showMessageDialog(null, "Welcome " + UserText.getText(), "Successful Login", JOptionPane.PLAIN_MESSAGE);
-                new try1().setVisible(true);
+                new home().setVisible(true);
                 dispose();
             }
             else
@@ -121,6 +121,12 @@ public class login extends javax.swing.JFrame {
 
     private void CloseButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseButActionPerformed
         // TODO add your handling code here:
+        int  a;
+        a = JOptionPane.showConfirmDialog(null,"Do you reall want to Exit?","Select",JOptionPane.YES_NO_OPTION);
+        if(a==0)
+        {
+            System.exit(0);
+        }
     }//GEN-LAST:event_CloseButActionPerformed
 
     /**
