@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author raksh
  */
-public class home extends javax.swing.JFrame {
+public class home1 extends javax.swing.JFrame {
 
     /**
-     * Creates new form home
+     * Creates new form home1
      */
-    public home() {
+    public home1() {
         initComponents();
     }
 
@@ -95,56 +95,76 @@ public class home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(CliDel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Logout)
-                .addGap(55, 55, 55))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 507, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 49, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Bills)
-                        .addComponent(DocInfo)
-                        .addComponent(App)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(105, 105, 105)
+                            .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(PatientAdd)
-                        .addComponent(MedRec)))
-                .addContainerGap(141, Short.MAX_VALUE))
+                        .addComponent(MedRec)
+                        .addComponent(App)
+                        .addComponent(DocInfo)
+                        .addComponent(Bills)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(31, 31, 31)
+                            .addComponent(CliDel)
+                            .addGap(206, 206, 206)
+                            .addComponent(Logout)))
+                    .addGap(0, 49, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(54, Short.MAX_VALUE)
-                .addComponent(Title)
-                .addGap(18, 18, 18)
-                .addComponent(PatientAdd)
-                .addGap(18, 18, 18)
-                .addComponent(MedRec)
-                .addGap(18, 18, 18)
-                .addComponent(App)
-                .addGap(18, 18, 18)
-                .addComponent(DocInfo)
-                .addGap(18, 18, 18)
-                .addComponent(Bills)
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CliDel)
-                    .addComponent(Logout))
-                .addGap(44, 44, 44))
+            .addGap(0, 521, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 53, Short.MAX_VALUE)
+                    .addComponent(Title)
+                    .addGap(18, 18, 18)
+                    .addComponent(PatientAdd)
+                    .addGap(18, 18, 18)
+                    .addComponent(MedRec)
+                    .addGap(18, 18, 18)
+                    .addComponent(App)
+                    .addGap(18, 18, 18)
+                    .addComponent(DocInfo)
+                    .addGap(18, 18, 18)
+                    .addComponent(Bills)
+                    .addGap(47, 47, 47)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(CliDel)
+                        .addComponent(Logout))
+                    .addGap(0, 53, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void PatientAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientAddActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new newpatient1().setVisible(true);
+    }//GEN-LAST:event_PatientAddActionPerformed
+
+    private void MedRecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedRecActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new medicalrecords().setVisible(true);
+    }//GEN-LAST:event_MedRecActionPerformed
+
     private void AppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
         new appointment().setVisible(true);
     }//GEN-LAST:event_AppActionPerformed
 
     private void DocInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocInfoActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        new DoctorMain1().setVisible(true);
+
     }//GEN-LAST:event_DocInfoActionPerformed
 
     private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
@@ -156,25 +176,13 @@ public class home extends javax.swing.JFrame {
             setVisible(false);
             new login().setVisible(true);
         }
-        
+
     }//GEN-LAST:event_LogoutActionPerformed
-
-    private void PatientAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientAddActionPerformed
-        // TODO add your handling code here:
-        setVisible(false);
-            new newpatient().setVisible(true);
-    }//GEN-LAST:event_PatientAddActionPerformed
-
-    private void MedRecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedRecActionPerformed
-        // TODO add your handling code here:
-            setVisible(false);
-            new medicalrecords().setVisible(true);
-    }//GEN-LAST:event_MedRecActionPerformed
 
     private void BillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BillsActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-            new bill().setVisible(true);
+            new bill1().setVisible(true);
     }//GEN-LAST:event_BillsActionPerformed
 
     /**
@@ -194,20 +202,20 @@ public class home extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(home1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(home1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(home1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(home1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new home().setVisible(true);
+                new home1().setVisible(true);
             }
         });
     }

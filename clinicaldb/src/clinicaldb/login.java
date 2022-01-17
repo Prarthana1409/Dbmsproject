@@ -1,6 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package clinicaldb;
 import java.sql.*;
 import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author raksh
+ */
 public class login extends javax.swing.JFrame {
 
     /**
@@ -25,18 +34,14 @@ public class login extends javax.swing.JFrame {
         PassText = new javax.swing.JPasswordField();
         LoginBut = new javax.swing.JButton();
         CloseBut = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         UserLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         UserLabel.setText("Username:");
-        getContentPane().add(UserLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
 
         PassLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         PassLabel.setText("Password:");
-        getContentPane().add(PassLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 116, -1));
 
         UserText.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         UserText.addActionListener(new java.awt.event.ActionListener() {
@@ -44,7 +49,6 @@ public class login extends javax.swing.JFrame {
                 UserTextActionPerformed(evt);
             }
         });
-        getContentPane().add(UserText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 205, -1));
 
         PassText.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         PassText.addActionListener(new java.awt.event.ActionListener() {
@@ -52,7 +56,6 @@ public class login extends javax.swing.JFrame {
                 PassTextActionPerformed(evt);
             }
         });
-        getContentPane().add(PassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 205, -1));
 
         LoginBut.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         LoginBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/login.png"))); // NOI18N
@@ -62,7 +65,6 @@ public class login extends javax.swing.JFrame {
                 LoginButActionPerformed(evt);
             }
         });
-        getContentPane().add(LoginBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, -1));
 
         CloseBut.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         CloseBut.setIcon(new javax.swing.ImageIcon("C:\\Users\\raksh\\Desktop\\icons\\close.png")); // NOI18N
@@ -72,17 +74,56 @@ public class login extends javax.swing.JFrame {
                 CloseButActionPerformed(evt);
             }
         });
-        getContentPane().add(CloseBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\raksh\\Desktop\\icons\\back.png")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 659, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 157, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(UserLabel)
+                            .addGap(24, 24, 24)
+                            .addComponent(UserText, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(PassLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(24, 24, 24)
+                            .addComponent(PassText, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(LoginBut)
+                            .addGap(31, 31, 31)
+                            .addComponent(CloseBut)))
+                    .addGap(0, 157, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 110, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(UserLabel)
+                        .addComponent(UserText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(22, 22, 22)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(PassLabel)
+                        .addComponent(PassText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(22, 22, 22)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(LoginBut)
+                        .addComponent(CloseBut))
+                    .addGap(0, 111, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void UserTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserTextActionPerformed
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_UserTextActionPerformed
 
     private void PassTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassTextActionPerformed
@@ -101,7 +142,7 @@ public class login extends javax.swing.JFrame {
             if(rs.next())
             {
                 JOptionPane.showMessageDialog(null, "Welcome " + UserText.getText(), "Successful Login", JOptionPane.PLAIN_MESSAGE);
-                new home().setVisible(true);
+                new home1().setVisible(true);
                 dispose();
             }
             else
@@ -116,7 +157,6 @@ public class login extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, e);
         }
-   
     }//GEN-LAST:event_LoginButActionPerformed
 
     private void CloseButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseButActionPerformed
@@ -171,6 +211,5 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPasswordField PassText;
     private javax.swing.JLabel UserLabel;
     private javax.swing.JTextField UserText;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

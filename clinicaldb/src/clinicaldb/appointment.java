@@ -5,6 +5,7 @@
 package clinicaldb;
 
 import javax.swing.JOptionPane;
+import java.sql.*;
 
 /**
  *
@@ -173,7 +174,7 @@ public class appointment extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         new appointment().setVisible (false);
-        new home().setVisible(true);
+        new home1().setVisible(true);
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -187,10 +188,10 @@ public class appointment extends javax.swing.JFrame {
         String Date=jTextField6.getText();
         String PhoneNumber=jTextField6.getText();
         
-        try{
-          //  Connection con = ConnectionProvider.getCon;
-           // Statement st=con.createStatement();
-            st.executeUpdate("Insert into appointment Values('"+PatientID+"','"+PatientName+"','"+Cause+"','"+StartTime+"','"+EndTime+"','"+Date+"','"+PhoneNumber"')");
+        try{Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
+            Statement st = con.createStatement();
+            st.executeUpdate("Insert into appointment Values('"+PatientID+"','"+PatientName+"','"+Cause+"','"+StartTime+"','"+EndTime+"','"+Date+"','"+PhoneNumber+"'");
             JOptionPane.showMessageDialog(null,"Appointment Confirmed!");
             setVisible(false);
             new appointment().setVisible(true);

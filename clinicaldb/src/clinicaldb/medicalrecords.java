@@ -1,6 +1,6 @@
 package clinicaldb; 
 import java.sql.*;
- import Project.ConnectionProvider;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
  import javax.swing.JOptionPane;
@@ -135,7 +135,7 @@ public class medicalrecords extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel7.setText("INVALID CREDENTIAS!");
+        jLabel7.setText("INVALID CREDENTIALS!");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -204,7 +204,7 @@ public class medicalrecords extends javax.swing.JFrame {
                         .addGap(443, 443, 443)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(394, 394, 394)
+                        .addGap(384, 384, 384)
                         .addComponent(jLabel7)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -260,15 +260,16 @@ public class medicalrecords extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-         new home().setVisible(true);
+         new home1().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String PatientID=jTextField1.getText();
         try{
-            //  Connection con = ConnectionProvider.getCon;
-           // Statement st=con.createStatement();
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
+            Statement st = con.createStatement();
            ResultSet rs =st.executeQuery("Select *from patient where PatientID='"+PatientID+"'");
            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
            if(!rs.first())
@@ -299,8 +300,9 @@ public class medicalrecords extends javax.swing.JFrame {
             
             
             try{
-                Connection con = ConnectionProvider.getCon();
-                Statement st=con.createStatement();
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
+                Statement st = con.createStatement();
                 st.executeUpdate("Insert into medicalrecords values('"+PatientID+"','"+MedicalRecordID+"','"+DOB+"','"+Symtoms+"','"+Diagnosis+"','"+Medication+"')");
                 JOptionPane.showMessageDialog(null,"Successfully Updated!");
                 setVisible(false);
@@ -308,6 +310,8 @@ public class medicalrecords extends javax.swing.JFrame {
                 
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, e);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(medicalrecords.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         else
