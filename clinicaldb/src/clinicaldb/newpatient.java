@@ -1,3 +1,4 @@
+package clinicaldb;
 import project.ConnectionProvider;
 import java.sql.*;
 import javax.swing.JOptionPane;

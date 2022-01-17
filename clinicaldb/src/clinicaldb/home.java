@@ -1,4 +1,4 @@
-
+package clinicaldb;
 import javax.swing.JOptionPane;
 
 /*
