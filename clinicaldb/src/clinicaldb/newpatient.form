@@ -31,43 +31,43 @@
               <EmptySpace min="91" pref="91" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="131" max="-2" attributes="0"/>
               <EmptySpace min="127" pref="127" max="-2" attributes="0"/>
-              <Component id="Name" min="-2" pref="289" max="-2" attributes="0"/>
+              <Component id="jTextField1" min="-2" pref="289" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="91" pref="91" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" pref="131" max="-2" attributes="0"/>
               <EmptySpace min="127" pref="127" max="-2" attributes="0"/>
-              <Component id="ID" min="-2" pref="289" max="-2" attributes="0"/>
+              <Component id="jTextField2" min="-2" pref="289" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="91" pref="91" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" pref="131" max="-2" attributes="0"/>
               <EmptySpace min="127" pref="127" max="-2" attributes="0"/>
-              <Component id="Add" min="-2" pref="289" max="-2" attributes="0"/>
+              <Component id="jTextField3" min="-2" pref="289" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="91" pref="91" max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" pref="131" max="-2" attributes="0"/>
               <EmptySpace min="127" pref="127" max="-2" attributes="0"/>
-              <Component id="PhNo" min="-2" pref="289" max="-2" attributes="0"/>
+              <Component id="jTextField4" min="-2" pref="289" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="91" pref="91" max="-2" attributes="0"/>
               <Component id="jLabel6" min="-2" pref="131" max="-2" attributes="0"/>
               <EmptySpace min="127" pref="127" max="-2" attributes="0"/>
-              <Component id="Gender" min="-2" pref="289" max="-2" attributes="0"/>
+              <Component id="jComboBox1" min="-2" pref="289" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="91" pref="91" max="-2" attributes="0"/>
               <Component id="jLabel5" min="-2" pref="131" max="-2" attributes="0"/>
               <EmptySpace min="127" pref="127" max="-2" attributes="0"/>
-              <Component id="BG" min="-2" pref="289" max="-2" attributes="0"/>
+              <Component id="jComboBox2" min="-2" pref="289" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="540" pref="540" max="-2" attributes="0"/>
-              <Component id="Save" min="-2" max="-2" attributes="0"/>
+              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="56" pref="56" max="-2" attributes="0"/>
-              <Component id="Close" min="-2" pref="78" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="78" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -75,16 +75,19 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
-                  <Component id="Name" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel1" min="-2" pref="51" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
+                      <Component id="jTextField1" min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel2" min="-2" pref="43" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
-                      <Component id="ID" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jTextField2" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
@@ -92,7 +95,7 @@
                   <Component id="jLabel3" min="-2" pref="48" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                      <Component id="Add" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="jTextField3" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
@@ -100,7 +103,7 @@
                   <Component id="jLabel4" min="-2" pref="52" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
-                      <Component id="PhNo" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="jTextField4" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
@@ -108,7 +111,7 @@
                   <Component id="jLabel6" min="-2" pref="50" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Component id="Gender" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jComboBox1" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
@@ -116,23 +119,23 @@
                   <Component id="jLabel5" min="-2" pref="48" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
-                      <Component id="BG" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jComboBox2" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                      <Component id="Save" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jButton2" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="Close" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="Close">
+    <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
@@ -140,7 +143,7 @@
         <Property name="text" type="java.lang.String" value="Close"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CloseActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -191,24 +194,33 @@
         <Property name="text" type="java.lang.String" value="Blood Group"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="Name">
+    <Component class="javax.swing.JTextField" name="jTextField1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="abc"/>
+      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="ID">
+    <Component class="javax.swing.JTextField" name="jTextField2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1234"/>
+      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IDActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="Add">
+    <Component class="javax.swing.JTextField" name="jTextField3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="addsa"/>
+      </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="PhNo">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PhNoActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JTextField" name="jTextField4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="23433332"/>
+      </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="Gender">
+    <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
@@ -222,14 +234,11 @@
           </StringArray>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GenderActionPerformed"/>
-      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="BG">
+    <Component class="javax.swing.JComboBox" name="jComboBox2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
@@ -248,13 +257,13 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BGActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox2ActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="Save">
+    <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
@@ -262,7 +271,7 @@
         <Property name="text" type="java.lang.String" value="Save"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaveActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

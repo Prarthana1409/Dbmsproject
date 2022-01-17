@@ -1,14 +1,14 @@
+package clinicaldb;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package clinicaldb;
-
-import javax.swing.JOptionPane;
 
 /**
  *
- * @author raksh
+ * @author Prarthana
  */
 public class home extends javax.swing.JFrame {
 
@@ -28,142 +28,108 @@ public class home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PatientAdd = new javax.swing.JButton();
-        MedRec = new javax.swing.JButton();
-        App = new javax.swing.JButton();
-        DocInfo = new javax.swing.JButton();
-        Logout = new javax.swing.JButton();
-        Bills = new javax.swing.JButton();
-        Title = new javax.swing.JLabel();
-        CliDel = new javax.swing.JButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PatientAdd.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        PatientAdd.setText("1. Add New Patient Record");
-        PatientAdd.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        jButton2.setText("ADD NEW PATIENT RECORD");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PatientAddActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 39, 301, 60));
 
-        MedRec.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        MedRec.setText("2. Medical Record");
-        MedRec.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton3.setText("MEDICAL RECORDS");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MedRecActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 117, 301, 55));
 
-        App.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        App.setText("3. Appointments");
-        App.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setFont(jButton1.getFont().deriveFont(jButton1.getFont().getStyle() | java.awt.Font.BOLD, 12));
+        jButton1.setText("APPOINTMENTS");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AppActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 190, 301, 59));
 
-        DocInfo.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        DocInfo.setText("4. Doctors Information");
-        DocInfo.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setFont(jButton4.getFont().deriveFont(jButton4.getFont().getStyle() | java.awt.Font.BOLD, 12));
+        jButton4.setText("UPDATE PATIENT INFO");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DocInfoActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 267, 301, 62));
 
-        Logout.setText("Logout");
-        Logout.addActionListener(new java.awt.event.ActionListener() {
+        jButton5.setFont(jButton5.getFont().deriveFont(jButton5.getFont().getStyle() | java.awt.Font.BOLD, 12));
+        jButton5.setText("UPDATE DOCTOR INFO");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 347, 301, 67));
+
+        jButton6.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        jButton6.setText("BILL");
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 427, 301, 67));
+
+        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton7.setText("HOSPITAL INFO");
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 507, 301, 64));
+
+        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton8.setText("Logout");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogoutActionPerformed(evt);
+                jButton8ActionPerformed(evt);
             }
         });
-
-        Bills.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        Bills.setText("5. Bills");
-
-        Title.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
-        Title.setText("Clinic Name");
-
-        CliDel.setText("Clinic Details");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(CliDel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Logout)
-                .addGap(55, 55, 55))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Bills)
-                        .addComponent(DocInfo)
-                        .addComponent(App)
-                        .addComponent(PatientAdd)
-                        .addComponent(MedRec)))
-                .addContainerGap(141, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(54, Short.MAX_VALUE)
-                .addComponent(Title)
-                .addGap(18, 18, 18)
-                .addComponent(PatientAdd)
-                .addGap(18, 18, 18)
-                .addComponent(MedRec)
-                .addGap(18, 18, 18)
-                .addComponent(App)
-                .addGap(18, 18, 18)
-                .addComponent(DocInfo)
-                .addGap(18, 18, 18)
-                .addComponent(Bills)
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CliDel)
-                    .addComponent(Logout))
-                .addGap(44, 44, 44))
-        );
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(572, 524, 99, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AppActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new newpatient().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void DocInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocInfoActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DocInfoActionPerformed
+        new appointment().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         int  a;
-        a = JOptionPane.showConfirmDialog(null,"Do you reall want to logout?","Select",JOptionPane.YES_NO_OPTION);
+        a = JOptionPane.showConfirmDialog(null,"Do you really want to logout?","Select",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
             setVisible(false);
             new login().setVisible(true);
         }
-        
-    }//GEN-LAST:event_LogoutActionPerformed
+            
+    }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void PatientAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientAddActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
-            new newpatient().setVisible(true);
-    }//GEN-LAST:event_PatientAddActionPerformed
-
-    private void MedRecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedRecActionPerformed
-        // TODO add your handling code here:
-            setVisible(false);
-            new medicalrecords().setVisible(true);
-    }//GEN-LAST:event_MedRecActionPerformed
+        new medicalrecords().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,13 +167,14 @@ public class home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton App;
-    private javax.swing.JButton Bills;
-    private javax.swing.JButton CliDel;
-    private javax.swing.JButton DocInfo;
-    private javax.swing.JButton Logout;
-    private javax.swing.JButton MedRec;
-    private javax.swing.JButton PatientAdd;
-    private javax.swing.JLabel Title;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     // End of variables declaration//GEN-END:variables
 }

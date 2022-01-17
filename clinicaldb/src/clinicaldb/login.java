@@ -1,6 +1,12 @@
-package clinicaldb;
-import java.sql.*;
-import javax.swing.JOptionPane;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+
+/**
+ *
+ * @author Prarthana
+ */
 public class login extends javax.swing.JFrame {
 
     /**
@@ -19,115 +25,21 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        UserLabel = new javax.swing.JLabel();
-        PassLabel = new javax.swing.JLabel();
-        UserText = new javax.swing.JTextField();
-        PassText = new javax.swing.JPasswordField();
-        LoginBut = new javax.swing.JButton();
-        CloseBut = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        UserLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        UserLabel.setText("Username:");
-        getContentPane().add(UserLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
-
-        PassLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        PassLabel.setText("Password:");
-        getContentPane().add(PassLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 116, -1));
-
-        UserText.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        UserText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserTextActionPerformed(evt);
-            }
-        });
-        getContentPane().add(UserText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 205, -1));
-
-        PassText.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        PassText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PassTextActionPerformed(evt);
-            }
-        });
-        getContentPane().add(PassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 205, -1));
-
-        LoginBut.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        LoginBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/login.png"))); // NOI18N
-        LoginBut.setText("Login");
-        LoginBut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginButActionPerformed(evt);
-            }
-        });
-        getContentPane().add(LoginBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, -1));
-
-        CloseBut.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        CloseBut.setIcon(new javax.swing.ImageIcon("C:\\Users\\raksh\\Desktop\\icons\\close.png")); // NOI18N
-        CloseBut.setText("Exit");
-        CloseBut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CloseButActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CloseBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\raksh\\Desktop\\icons\\back.png")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void UserTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserTextActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_UserTextActionPerformed
-
-    private void PassTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PassTextActionPerformed
-
-    private void LoginButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButActionPerformed
-        String sql = "select * from users where username =? and password = ?";
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
-            PreparedStatement pstm=con.prepareStatement(sql);
-            pstm.setString(1, UserText.getText());
-            pstm.setString(2, new String(PassText.getPassword()));
-            ResultSet rs=pstm.executeQuery();
-            if(rs.next())
-            {
-                JOptionPane.showMessageDialog(null, "Welcome " + UserText.getText(), "Successful Login", JOptionPane.PLAIN_MESSAGE);
-                new home().setVisible(true);
-                dispose();
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "Invalid Username or Password" + UserText.getText(), "Unsuccessful Login", JOptionPane.ERROR_MESSAGE);
-
-            }
-            con.close();
-        }
-
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-   
-    }//GEN-LAST:event_LoginButActionPerformed
-
-    private void CloseButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseButActionPerformed
-        // TODO add your handling code here:
-        int  a;
-        a = JOptionPane.showConfirmDialog(null,"Do you reall want to Exit?","Select",JOptionPane.YES_NO_OPTION);
-        if(a==0)
-        {
-            System.exit(0);
-        }
-    }//GEN-LAST:event_CloseButActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,12 +77,5 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CloseBut;
-    private javax.swing.JButton LoginBut;
-    private javax.swing.JLabel PassLabel;
-    private javax.swing.JPasswordField PassText;
-    private javax.swing.JLabel UserLabel;
-    private javax.swing.JTextField UserText;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
