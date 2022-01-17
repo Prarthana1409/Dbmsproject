@@ -80,6 +80,11 @@ public class home extends javax.swing.JFrame {
 
         Bills.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         Bills.setText("5. Bills");
+        Bills.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BillsActionPerformed(evt);
+            }
+        });
 
         Title.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
         Title.setText("Clinic Name");
@@ -135,6 +140,7 @@ public class home extends javax.swing.JFrame {
 
     private void AppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppActionPerformed
         // TODO add your handling code here:
+        new appointment().setVisible(true);
     }//GEN-LAST:event_AppActionPerformed
 
     private void DocInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocInfoActionPerformed
@@ -164,6 +170,12 @@ public class home extends javax.swing.JFrame {
             setVisible(false);
             new medicalrecords().setVisible(true);
     }//GEN-LAST:event_MedRecActionPerformed
+
+    private void BillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BillsActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+            new bill().setVisible(true);
+    }//GEN-LAST:event_BillsActionPerformed
 
     /**
      * @param args the command line arguments
