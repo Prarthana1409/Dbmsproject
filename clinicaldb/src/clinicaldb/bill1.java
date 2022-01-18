@@ -6,8 +6,11 @@ package clinicaldb;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -41,23 +44,31 @@ public class bill1 extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Patient ID");
         jLabel2.setToolTipText("");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 91, 228, 40));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Doctor ID");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 89, 100, 45));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("Duration");
+        jLabel4.setText("Duration(mins)");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 218, 228, 45));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Purpose");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 228, 45));
 
         jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -65,9 +76,11 @@ public class bill1 extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 152, 228, 35));
 
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "15 min", "30 min", "45 min", "1 hr or more" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "15", "30", "45", "60", "75" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 281, 228, 35));
 
         jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -75,8 +88,10 @@ public class bill1 extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 231, 35));
 
         jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 228, 35));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setText("Generate Bill");
@@ -85,6 +100,7 @@ public class bill1 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 422, 154, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton2.setText("Cancel");
@@ -93,93 +109,46 @@ public class bill1 extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 360, 161, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Bill No");
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton3.setText("Save Bill");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 358, -1, -1));
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Bill ID");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 52, 37, -1));
+
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 49, 63, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 34, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(241, 241, 241)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(191, 191, 191)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(105, 105, 105)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(103, 103, 103)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(105, 105, 105)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(1, 1, 1)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(104, 104, 104)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(34, 34, 34)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(180, 180, 180)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 34, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 444, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 29, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(20, 20, 20)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(5, 5, 5)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(23, 23, 23)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(9, 9, 9)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(37, 37, 37)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2))
-                    .addGap(0, 30, Short.MAX_VALUE)))
-        );
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Bill No", "Bill Amount"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 462, 254, 64));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -194,28 +163,62 @@ public class bill1 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String sql = "select Duration * 10 from bill where BillNo = ? and PatientID =?" ;
-        String BillNo=jTextField4.getText();
-        String PatientID=jTextField1.getText();
-        String DoctorID=jTextField2.getText();
-        String Purpose=jTextField3.getText();
-        String Duration=(String)jComboBox1.getSelectedItem();
-
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
             Statement st = con.createStatement();
-            st.executeUpdate("Insert into bill Values('"+BillNo+"','"+PatientID+"','"+DoctorID+"','"+Purpose+"','"+Duration+"')");
-            JOptionPane.showMessageDialog(null,"Bill Generated!");
-            setVisible(false);
-            new bill1().setVisible(true);
-
+            String BIDIN=jTextField4.getText();
+            String sql = "select BID,Duration*10 as AMT from bills where BID ='"+BIDIN+"'";
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                String BID = String.valueOf(rs.getInt("BID"));
+                String AMT = String.valueOf(rs.getInt("AMT"));
+                
+                String val[] = {BID,AMT};
+                DefaultTableModel tblmdl = (DefaultTableModel)jTable1.getModel();
+                tblmdl.addRow(val);
+          }
         }
-
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null,"Please fill in all the credentials");
+        catch (Exception e) {
+            System.out.println(e.getMessage());
         }
+//        try{
+//            Class.forName("com.mysql.jdbc.Driver");
+//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
+//            //Statement st = con.createStatement();
+//            String sql = "select Duration * 10 from bill where BillNo = ?";
+//            PreparedStatement pstmt = con.prepareStatement(sql);
+//            pstmt.setString(1, jTextField4.getText());                                
+//            pstmt.executeUpdate();
+//            JOptionPane.showMessageDialog(null,"Insertion Successfull!");
+//            con.close();
+//            
+//            
+//        }catch(Exception e){
+//            JOptionPane.showMessageDialog(null,e);
+//        }
+//        String sql = "select Duration * 10 from bill where BillNo = ? and PatientID =?" ;
+//        String BillNo=jTextField4.getText();
+//        String PatientID=jTextField1.getText();
+//        String DoctorID=jTextField2.getText();
+//        String Purpose=jTextField3.getText();
+//        String Duration=(String)jComboBox1.getSelectedItem();
+//
+//        try{
+//            Class.forName("com.mysql.jdbc.Driver");
+//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
+//            Statement st = con.createStatement();
+//            st.executeUpdate("Insert into bill Values('"+BillNo+"','"+PatientID+"','"+DoctorID+"','"+Purpose+"','"+Duration+"')");
+//            JOptionPane.showMessageDialog(null,"Bill Generated!");
+//            setVisible(false);
+//            new bill1().setVisible(true);
+//
+//        }
+//
+//        catch (Exception e)
+//        {
+//            JOptionPane.showMessageDialog(null,"Please fill in all the credentials");
+//        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -223,6 +226,31 @@ public class bill1 extends javax.swing.JFrame {
         setVisible(false);
         new home1().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
+            //Statement st = con.createStatement();
+            String sql = "insert into bills values (?, ?, ?, ?, ?);";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, jTextField4.getText());
+            pstmt.setString(2, jTextField1.getText());
+            pstmt.setString(3, jTextField2.getText());            
+            String min;
+            min=jComboBox1.getSelectedItem().toString();
+            pstmt.setInt(4, Integer.parseInt(min));                      
+            pstmt.setString(5, jTextField3.getText());                       
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null,"Insertion Successfull!");
+            con.close();
+            
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
@@ -266,12 +294,15 @@ public class bill1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
