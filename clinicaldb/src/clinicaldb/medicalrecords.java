@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
  import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 
@@ -99,10 +100,10 @@ public class medicalrecords extends javax.swing.JFrame {
         jLabel2.setText("Medical Record ID");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("DOB");
+        jLabel3.setText("AGE");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("Symtoms");
+        jLabel4.setText("Symptoms");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Diagnosis");
@@ -139,15 +140,20 @@ public class medicalrecords extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -221,9 +227,9 @@ public class medicalrecords extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -265,23 +271,67 @@ public class medicalrecords extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String PatientID=jTextField1.getText();
+        
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
             Statement st = con.createStatement();
-           ResultSet rs =st.executeQuery("Select *from patient where PatientID='"+PatientID+"'");
-           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-           if(!rs.first())
-               jLabel7.setVisible(true);
-               jTextField1.setEditable(false);
-               jTextField2.setEditable(false);
-             flag=1;  
+            String PatientID=jTextField1.getText();   //Integer.parseInt(docID.getText())
+            String sql = "select * from patient where PID ='"+PatientID+"'";
+            ResultSet rs = st.executeQuery(sql);
+            if(rs.next()){
+                String pid = String.valueOf(rs.getInt("PID"));
+                String pnam = rs.getString("Pname");
+                String gen= rs.getString("Gender");
+                String bg = rs.getString("BloodGroup");
+                String ph = rs.getString("PhoneNumber");
+                String city = rs.getString("City");
+                
+                
+                String val[] = {pid,pnam,gen,bg,ph,city};
+                DefaultTableModel tblmdl = (DefaultTableModel)jTable2.getModel();
+                tblmdl.addRow(val);
+                jTextField2.setEditable(true);
+                jTextField3.setEditable(true);
+                jTextField4.setEditable(true);
+                jTextField5.setEditable(true);
+                jTextField6.setEditable(true);
+          }
+            else{
+                jTextField2.setEditable(false);
+                jTextField3.setEditable(false);
+                jTextField4.setEditable(false);
+                jTextField5.setEditable(false);
+                jTextField6.setEditable(false);
+                JOptionPane.showMessageDialog(null,"Patient Not Found");
+                
+            }
+            
         }
-         catch(Exception e)
-                    {
-                    JOptionPane.showMessageDialog(null,"Connection Error");
-                    }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        
+//        try{
+//            String PatientID=jTextField1.getText();
+//            Class.forName("com.mysql.jdbc.Driver");
+//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
+//            Statement st = con.createStatement();
+//            ResultSet rs =st.executeQuery("Select * from patient where PID='"+PatientID+"'");
+//            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+//           if(!rs.first())
+//               jLabel7.setVisible(true);
+//           else{
+//               jTextField1.setEditable(false);
+//               jTextField2.setEditable(false);
+//             flag=1; 
+//           }
+//        }
+//         catch(Exception e)
+//                    {
+//                    JOptionPane.showMessageDialog(null,"Connection Error");
+//                    }
                
         
       
@@ -289,21 +339,22 @@ public class medicalrecords extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        if(flag==1)
-        {
-            String PatientID=jTextField1.getText();
-            String MedicalRecordID=jTextField2.getText();
-            String DOB=jTextField3.getText();
-            String Symtoms=jTextField4.getText();
-            String Diagnosis=jTextField5.getText();
-            String Medication=jTextField6.getText();
+        
+        
+            
             
             
             try{
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
                 Statement st = con.createStatement();
-                st.executeUpdate("Insert into medicalrecords values('"+PatientID+"','"+MedicalRecordID+"','"+DOB+"','"+Symtoms+"','"+Diagnosis+"','"+Medication+"')");
+                String PatientID=jTextField1.getText();
+                String MedicalRecordID=jTextField2.getText();
+                String DOB=jTextField3.getText();
+                String Symptoms=jTextField4.getText();
+                String Diagnosis=jTextField5.getText();
+                String Medication=jTextField6.getText();
+                st.executeUpdate("Insert into medRec values('"+PatientID+"','"+MedicalRecordID+"','"+DOB+"','"+Symptoms+"','"+Diagnosis+"','"+Medication+"')");
                 JOptionPane.showMessageDialog(null,"Successfully Updated!");
                 setVisible(false);
                 new medicalrecords().setVisible(true);
@@ -312,10 +363,9 @@ public class medicalrecords extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, e);
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(medicalrecords.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        else
-            JOptionPane.showMessageDialog(null,"PatientID field is empty");
+            } 
+        
+        
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
