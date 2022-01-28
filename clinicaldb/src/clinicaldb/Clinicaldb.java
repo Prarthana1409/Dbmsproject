@@ -15,6 +15,8 @@ public class Clinicaldb {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        login1 log = new login1();
+        log.show();
     }
     
 }

@@ -174,7 +174,7 @@ public class home1 extends javax.swing.JFrame {
         if(a==0)
         {
             setVisible(false);
-            new login().setVisible(true);
+            new login1().setVisible(true);
         }
 
     }//GEN-LAST:event_LogoutActionPerformed
