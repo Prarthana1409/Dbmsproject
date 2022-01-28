@@ -4,6 +4,7 @@
  */
 package clinicaldb;
 import java.sql.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +18,7 @@ public class newpatient1 extends javax.swing.JFrame {
      */
     public newpatient1() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("ico.png")).getImage());
     }
 
     /**

@@ -4,6 +4,8 @@
  */
 package clinicaldb;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author raksh
@@ -15,6 +17,7 @@ public class DoctorMain1 extends javax.swing.JFrame {
      */
     public DoctorMain1() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("ico.png")).getImage());
     }
 
     /**

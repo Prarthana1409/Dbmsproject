@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,6 +24,7 @@ public class bill1 extends javax.swing.JFrame {
      */
     public bill1() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("ico.png")).getImage());
     }
 
     /**

@@ -4,6 +4,7 @@ import java.sql.*;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
  import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -25,6 +26,7 @@ public class medicalrecords extends javax.swing.JFrame {
     
     public medicalrecords() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("ico.png")).getImage());
         
    
 

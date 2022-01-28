@@ -7,6 +7,7 @@ package clinicaldb;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,6 +21,7 @@ public class DisplayDoctors extends javax.swing.JFrame {
      */
     public DisplayDoctors() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("ico.png")).getImage());
     }
 
     /**

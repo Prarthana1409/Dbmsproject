@@ -6,6 +6,7 @@ package clinicaldb;
 
 import javax.swing.JOptionPane;
 import java.sql.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,6 +19,7 @@ public class DeleteDoctor extends javax.swing.JFrame {
      */
     public DeleteDoctor() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("ico.png")).getImage());
     }
 
     /**

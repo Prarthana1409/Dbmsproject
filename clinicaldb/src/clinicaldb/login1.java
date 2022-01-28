@@ -10,7 +10,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -21,8 +23,15 @@ public class login1 extends javax.swing.JFrame {
     /**
      * Creates new form login1
      */
+        
+
+    /**
+     *
+     */
     public login1() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("ico.png")).getImage());
+        
     }
 
     /**
