@@ -26,25 +26,21 @@ public class DoctorMain1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        viewAll = new javax.swing.JButton();
         addDoc = new javax.swing.JButton();
         remDoc = new javax.swing.JButton();
         goBack = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        viewAll1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(280, 150));
+        setPreferredSize(new java.awt.Dimension(400, 332));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 36)); // NOI18N
-        jLabel1.setText("Clinic Name");
-
-        viewAll.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        viewAll.setText("1. View All Doctors");
-        viewAll.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewAllActionPerformed(evt);
-            }
-        });
-
+        addDoc.setBackground(new java.awt.Color(255, 255, 255));
         addDoc.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         addDoc.setText("2. Add Doctor");
         addDoc.addActionListener(new java.awt.event.ActionListener() {
@@ -52,7 +48,9 @@ public class DoctorMain1 extends javax.swing.JFrame {
                 addDocActionPerformed(evt);
             }
         });
+        getContentPane().add(addDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
 
+        remDoc.setBackground(new java.awt.Color(255, 255, 255));
         remDoc.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         remDoc.setText("3. Remove Doctor");
         remDoc.addActionListener(new java.awt.event.ActionListener() {
@@ -60,60 +58,42 @@ public class DoctorMain1 extends javax.swing.JFrame {
                 remDocActionPerformed(evt);
             }
         });
+        getContentPane().add(remDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1));
 
+        goBack.setBackground(new java.awt.Color(255, 255, 255));
+        goBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/logout.png"))); // NOI18N
         goBack.setText("Go Back");
         goBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goBackActionPerformed(evt);
             }
         });
+        getContentPane().add(goBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(48, 48, 48)
-                            .addComponent(jLabel1))
-                        .addComponent(viewAll)
-                        .addComponent(addDoc)
-                        .addComponent(remDoc)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(235, 235, 235)
-                            .addComponent(goBack)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addGap(37, 37, 37)
-                    .addComponent(viewAll)
-                    .addGap(18, 18, 18)
-                    .addComponent(addDoc)
-                    .addGap(18, 18, 18)
-                    .addComponent(remDoc)
-                    .addGap(18, 18, 18)
-                    .addComponent(goBack)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Imprint MT Shadow", 1, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel9.setText("Doctors");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
+
+        viewAll1.setBackground(new java.awt.Color(255, 255, 255));
+        viewAll1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        viewAll1.setText("1. View All Doctors");
+        viewAll1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewAll1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(viewAll1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/doc.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/white.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void viewAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllActionPerformed
-        // TODO add your handling code here:
-        setVisible(false);
-        new DisplayDoctors().setVisible(true);
-    }//GEN-LAST:event_viewAllActionPerformed
 
     private void addDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDocActionPerformed
         // TODO add your handling code here:
@@ -132,6 +112,13 @@ public class DoctorMain1 extends javax.swing.JFrame {
         setVisible(false);
         new home1().setVisible(true);
     }//GEN-LAST:event_goBackActionPerformed
+
+    private void viewAll1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAll1ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new DisplayDoctors().setVisible(true);
+        
+    }//GEN-LAST:event_viewAll1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,7 +159,9 @@ public class DoctorMain1 extends javax.swing.JFrame {
     private javax.swing.JButton addDoc;
     private javax.swing.JButton goBack;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton remDoc;
-    private javax.swing.JButton viewAll;
+    private javax.swing.JButton viewAll1;
     // End of variables declaration//GEN-END:variables
 }

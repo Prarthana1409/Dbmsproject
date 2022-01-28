@@ -29,71 +29,58 @@ public class DeleteDoctor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         delete = new javax.swing.JButton();
         docID = new javax.swing.JTextField();
-        clear = new javax.swing.JButton();
         close = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(280, 150));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Doctor ID :");
-
+        delete.setBackground(new java.awt.Color(255, 255, 255));
+        delete.setFont(new java.awt.Font("Mongolian Baiti", 1, 24)); // NOI18N
+        delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/delete.png"))); // NOI18N
         delete.setText("Delete");
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteActionPerformed(evt);
             }
         });
+        getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, -1, -1));
 
-        clear.setText("Clear");
-        clear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearActionPerformed(evt);
-            }
-        });
+        docID.setFont(new java.awt.Font("Perpetua", 1, 24)); // NOI18N
+        getContentPane().add(docID, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 80, 40));
 
+        close.setBackground(new java.awt.Color(255, 255, 255));
+        close.setFont(new java.awt.Font("Mongolian Baiti", 1, 24)); // NOI18N
+        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/logout.png"))); // NOI18N
         close.setText("Close");
         close.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 closeActionPerformed(evt);
             }
         });
+        getContentPane().add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel1)
-                        .addGap(38, 38, 38)
-                        .addComponent(docID, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(delete)
-                        .addGap(32, 32, 32)
-                        .addComponent(clear)
-                        .addGap(27, 27, 27)
-                        .addComponent(close)))
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(docID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(delete)
-                    .addComponent(clear)
-                    .addComponent(close))
-                .addContainerGap(171, Short.MAX_VALUE))
-        );
+        jLabel9.setFont(new java.awt.Font("Imprint MT Shadow", 1, 48)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 0));
+        jLabel9.setText("Delete Doctors");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/docdel.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 20, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Microsoft Tai Le", 1, 24)); // NOI18N
+        jLabel4.setText("Doctor ID :");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/pwhite.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,11 +101,6 @@ public class DeleteDoctor extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_deleteActionPerformed
-
-    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        // TODO add your handling code here:
-        docID.setText("");
-    }//GEN-LAST:event_clearActionPerformed
 
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
         // TODO add your handling code here:
@@ -162,10 +144,12 @@ public class DeleteDoctor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton clear;
     private javax.swing.JButton close;
     private javax.swing.JButton delete;
     private javax.swing.JTextField docID;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

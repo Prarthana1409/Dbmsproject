@@ -40,66 +40,68 @@ public class login1 extends javax.swing.JFrame {
         PassText = new javax.swing.JPasswordField();
         Submit = new javax.swing.JButton();
         Exit = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 204, 204));
+        setLocation(new java.awt.Point(280, 150));
+        setPreferredSize(new java.awt.Dimension(660, 425));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlabel1.setText("Username");
+        jlabel1.setFont(new java.awt.Font("Footlight MT Light", 1, 24)); // NOI18N
+        jlabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jlabel1.setText("Username:");
+        getContentPane().add(jlabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
 
-        jLabel2.setText("Password");
+        jLabel2.setFont(new java.awt.Font("Footlight MT Light", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Password:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 105, -1));
 
+        UserText.setFont(new java.awt.Font("Footlight MT Light", 1, 24)); // NOI18N
+        getContentPane().add(UserText, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 140, -1));
+
+        PassText.setFont(new java.awt.Font("Footlight MT Light", 1, 24)); // NOI18N
+        getContentPane().add(PassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 140, -1));
+
+        Submit.setBackground(new java.awt.Color(255, 255, 255));
+        Submit.setFont(new java.awt.Font("Footlight MT Light", 1, 24)); // NOI18N
+        Submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/index.png"))); // NOI18N
         Submit.setText("Submit");
         Submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SubmitActionPerformed(evt);
             }
         });
+        getContentPane().add(Submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 150, 40));
 
+        Exit.setBackground(new java.awt.Color(255, 255, 255));
+        Exit.setFont(new java.awt.Font("Footlight MT Light", 1, 24)); // NOI18N
+        Exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/logout.png"))); // NOI18N
         Exit.setText("Exit");
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
             }
         });
+        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 120, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(73, 73, 73)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UserText, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PassText, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(Submit)
-                        .addGap(48, 48, 48)
-                        .addComponent(Exit)))
-                .addContainerGap(138, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlabel1)
-                    .addComponent(UserText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(PassText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Submit)
-                    .addComponent(Exit))
-                .addContainerGap(92, Short.MAX_VALUE))
-        );
+        jLabel4.setFont(new java.awt.Font("Wide Latin", 0, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("SERENITY");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 390, 80));
+
+        jLabel3.setFont(new java.awt.Font("Algerian", 1, 30)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Login Page");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/Medical-Wallpapers-For-Desktop.png"))); // NOI18N
+        jLabel1.setText("LO");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 650, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -184,7 +186,10 @@ public class login1 extends javax.swing.JFrame {
     private javax.swing.JPasswordField PassText;
     private javax.swing.JButton Submit;
     private javax.swing.JTextField UserText;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jlabel1;
     // End of variables declaration//GEN-END:variables
 }

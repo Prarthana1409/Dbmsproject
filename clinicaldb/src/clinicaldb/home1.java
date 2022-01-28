@@ -34,110 +34,98 @@ public class home1 extends javax.swing.JFrame {
         DocInfo = new javax.swing.JButton();
         Logout = new javax.swing.JButton();
         Bills = new javax.swing.JButton();
-        Title = new javax.swing.JLabel();
         CliDel = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(280, 150));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PatientAdd.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        PatientAdd.setBackground(new java.awt.Color(204, 255, 255));
+        PatientAdd.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         PatientAdd.setText("1. Add New Patient Record");
         PatientAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PatientAddActionPerformed(evt);
             }
         });
+        getContentPane().add(PatientAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
-        MedRec.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        MedRec.setBackground(new java.awt.Color(204, 255, 255));
+        MedRec.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         MedRec.setText("2. Medical Record");
         MedRec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MedRecActionPerformed(evt);
             }
         });
+        getContentPane().add(MedRec, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
 
-        App.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        App.setBackground(new java.awt.Color(204, 255, 255));
+        App.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         App.setText("3. Appointments");
         App.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AppActionPerformed(evt);
             }
         });
+        getContentPane().add(App, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
 
-        DocInfo.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        DocInfo.setBackground(new java.awt.Color(204, 255, 255));
+        DocInfo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         DocInfo.setText("4. Doctors Information");
         DocInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DocInfoActionPerformed(evt);
             }
         });
+        getContentPane().add(DocInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
 
+        Logout.setBackground(new java.awt.Color(204, 255, 255));
+        Logout.setFont(new java.awt.Font("Perpetua Titling MT", 1, 18)); // NOI18N
+        Logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/logout.png"))); // NOI18N
         Logout.setText("Logout");
         Logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogoutActionPerformed(evt);
             }
         });
+        getContentPane().add(Logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, -1, 40));
 
-        Bills.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        Bills.setBackground(new java.awt.Color(204, 255, 255));
+        Bills.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         Bills.setText("5. Bills");
         Bills.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BillsActionPerformed(evt);
             }
         });
+        getContentPane().add(Bills, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, -1));
 
-        Title.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
-        Title.setText("Clinic Name");
-
+        CliDel.setBackground(new java.awt.Color(204, 255, 255));
+        CliDel.setFont(new java.awt.Font("Perpetua Titling MT", 1, 18)); // NOI18N
+        CliDel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/clinic.png"))); // NOI18N
         CliDel.setText("Clinic Details");
+        CliDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CliDelActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CliDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 230, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 507, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 49, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(105, 105, 105)
-                            .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(PatientAdd)
-                        .addComponent(MedRec)
-                        .addComponent(App)
-                        .addComponent(DocInfo)
-                        .addComponent(Bills)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(31, 31, 31)
-                            .addComponent(CliDel)
-                            .addGap(206, 206, 206)
-                            .addComponent(Logout)))
-                    .addGap(0, 49, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 521, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 53, Short.MAX_VALUE)
-                    .addComponent(Title)
-                    .addGap(18, 18, 18)
-                    .addComponent(PatientAdd)
-                    .addGap(18, 18, 18)
-                    .addComponent(MedRec)
-                    .addGap(18, 18, 18)
-                    .addComponent(App)
-                    .addGap(18, 18, 18)
-                    .addComponent(DocInfo)
-                    .addGap(18, 18, 18)
-                    .addComponent(Bills)
-                    .addGap(47, 47, 47)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(CliDel)
-                        .addComponent(Logout))
-                    .addGap(0, 53, Short.MAX_VALUE)))
-        );
+        jLabel4.setFont(new java.awt.Font("Wide Latin", 0, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 0));
+        jLabel4.setText("SERENITY");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 390, 90));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/whiteback.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaldb/blackback.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -185,6 +173,12 @@ public class home1 extends javax.swing.JFrame {
             new bill1().setVisible(true);
     }//GEN-LAST:event_BillsActionPerformed
 
+    private void CliDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CliDelActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new clinicDetails().setVisible(true);
+    }//GEN-LAST:event_CliDelActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -228,6 +222,8 @@ public class home1 extends javax.swing.JFrame {
     private javax.swing.JButton Logout;
     private javax.swing.JButton MedRec;
     private javax.swing.JButton PatientAdd;
-    private javax.swing.JLabel Title;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
