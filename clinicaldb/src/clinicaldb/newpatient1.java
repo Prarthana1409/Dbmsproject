@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package clinicaldb;
+import java.awt.HeadlessException;
 import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -186,7 +187,7 @@ public class newpatient1 extends javax.swing.JFrame {
             new newpatient1().setVisible(true);
 
         }
-        catch (Exception e)
+        catch (HeadlessException | ClassNotFoundException | SQLException e)
         {
             JOptionPane.showMessageDialog(null,"Please eenter the correct credentials");
         }

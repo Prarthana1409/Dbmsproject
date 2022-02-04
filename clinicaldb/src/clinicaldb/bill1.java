@@ -59,7 +59,6 @@ public class bill1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(280, 150));
-        setPreferredSize(new java.awt.Dimension(868, 630));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -111,7 +110,7 @@ public class bill1 extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Mongolian Baiti", 1, 24)); // NOI18N
-        jButton1.setText("Generate Bill");
+        jButton1.setText("Display Bill");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -211,7 +210,7 @@ public class bill1 extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
             Statement st = con.createStatement();
             String BIDIN=jTextField4.getText();
-            String sql = "select BID,Duration*10 as AMT from bills where BID ='"+BIDIN+"'";
+            String sql = "select BID,Amt from bills where BID ='"+BIDIN+"'";
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
                 String BID = String.valueOf(rs.getInt("BID"));
@@ -276,7 +275,7 @@ public class bill1 extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
             //Statement st = con.createStatement();
-            String sql = "insert into bills values (?, ?, ?, ?, ?);";
+            String sql = "insert into bills (BID,PID,DID,Duration,Purpose) values (?, ?, ?, ?, ?);";
             PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setString(1, jTextField4.getText());
             pstmt.setString(2, jTextField1.getText());
@@ -286,7 +285,7 @@ public class bill1 extends javax.swing.JFrame {
             pstmt.setInt(4, Integer.parseInt(min));                      
             pstmt.setString(5, jTextField3.getText());                       
             pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Insertion Successfull!");
+            JOptionPane.showMessageDialog(null,"Bill Saved!");
             con.close();
             
             

@@ -115,7 +115,7 @@ public class DisplayDoctors extends javax.swing.JFrame {
             String sql = "select * from doctor";
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                String id = String.valueOf(rs.getInt("ID"));
+                String id = String.valueOf(rs.getInt("DID"));
                 String fn = rs.getString("FirstName");
                 String ln = rs.getString("LastName");
                 String gd = rs.getString("Gender");

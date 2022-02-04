@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -117,7 +118,7 @@ public class login1 extends javax.swing.JFrame {
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
-        String sql = "select * from users where UserName =? and Password = ?";
+        String sql = "select * from staff where UserName =? and Password = ?";
         try{
             Class.forName("com.mysql.jdbc.Driver");
             try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234")) {
@@ -133,7 +134,7 @@ public class login1 extends javax.swing.JFrame {
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "Invalid Username or Password" + UserText.getText(), "Unsuccessful Login", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Invalid Username or Password " + UserText.getText(), "Unsuccessful Login", JOptionPane.ERROR_MESSAGE);
                     
                 }
             }

@@ -92,7 +92,7 @@ public class DeleteDoctor extends javax.swing.JFrame {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
-            String sql = "delete from doctor where ID = ?";
+            String sql = "delete from doctor where DID = ?";
             PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setInt (1,Integer.parseInt(docID.getText()));
             pstmt.executeUpdate();

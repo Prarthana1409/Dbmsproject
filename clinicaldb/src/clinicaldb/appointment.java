@@ -213,7 +213,7 @@ public class appointment extends javax.swing.JFrame {
             pstmt.setString(8, jTextField7.getText());
             
             pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Insertion Successfull!");
+            JOptionPane.showMessageDialog(null," Appointment Set!");
             con.close();
             
             

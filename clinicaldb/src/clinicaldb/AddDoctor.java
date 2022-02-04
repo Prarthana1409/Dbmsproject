@@ -185,8 +185,10 @@ public class AddDoctor extends javax.swing.JFrame {
             pstmt.setString(4, Email.getText());
             pstmt.setString(5, City.getText());
             pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Insertion Successfull!");
+            JOptionPane.showMessageDialog(null,"Doctor Joined!");
             con.close();
+            setVisible(false);
+            new AddDoctor().setVisible(true);
             
             
         }catch(Exception e){
